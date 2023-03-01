@@ -1,0 +1,18 @@
+{
+  "name": "11ty-lambda-edge",
+  "version": "1.0.0",
+  "description": "A simple tutorial for running Eleventy Serverless on AWS Lambda@Edge",
+  "main": "index.js",
+  "keywords": [
+    "eleventy",
+    "11ty",
+    "lambda",
+    "lambda@edge",
+    "tutorial"
+  ],
+  "author": "Gabi Dobocan <gabi@sandworm.dev> (https://sandworm.dev)",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}
