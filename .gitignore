@@ -2,3 +2,6 @@ node_modules
 _site
 serverless/edge/**
 !serverless/edge/index.js
+!serverless/edge/package.json
+!serverless/edge/package-lock.json
+!serverless/edge/test.js
