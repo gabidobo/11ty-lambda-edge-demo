@@ -6,7 +6,6 @@
   "author": "Gabi Dobocan <gabi@sandworm.dev> (https://sandworm.dev)",
   "license": "ISC",
   "dependencies": {
-    "@11ty/eleventy": "^2.0.0",
-    "querystring": "^0.2.1"
+    "@11ty/eleventy": "^2.0.0"
   }
 }
