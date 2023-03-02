@@ -1,0 +1,39 @@
+service: eleventy-lambda-demo
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  stage: prod
+  iam:
+    role:
+      statements:
+        - Effect: Allow
+          Action:
+            - logs:CreateLogStream
+            - logs:CreateLogGroup
+            - logs:PutLogEvents
+          Resource: "arn:aws:logs:*:*:log-group:/aws/*/*"
+
+functions:
+  demo:
+    handler: index.handler
+    events:
+       - cloudFront:
+          eventType: origin-request
+          origin: s3://eleventy-lambda-edge-demo.s3.amazonaws.com
+          pathPattern: /hello*
+
+resources:
+  Resources:
+    IamRoleLambdaExecution:
+      Type: "AWS::IAM::Role"
+      Properties:
+        AssumeRolePolicyDocument:
+          Statement: 
+            - Effect: Allow
+              Principal: 
+                Service:
+                  - lambda.amazonaws.com
+                  - edgelambda.amazonaws.com

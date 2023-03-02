@@ -5,3 +5,4 @@ serverless/edge/**
 !serverless/edge/package.json
 !serverless/edge/package-lock.json
 !serverless/edge/test.js
+!serverless/edge/serverless.yml
