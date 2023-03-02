@@ -1,5 +1,10 @@
 ---
 permalink:
-  edge: /hello/
+  edge:
+    - /hello/
+    - /hello/:name/
 ---
-<h1>Hello@Edge</h1>
+<h1>Hello@Edge {{ eleventy.serverless.path.name }}</h1>
+{% if eleventy.serverless.path.name %}
+  <img src="{{ eleventy.serverless.path.name | pokeimage }}" />
+{% endif %}
